@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <title>President</title>
+    <h1>President guess by Mithusri Doddi</h1>
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="form_password">Enter the secret president name</label>
+    <input type="password" id="form_password" name="form_password" value="George Washington"> <br>
+
+    <label for="form_check">Guess the president </label>
+    <input type ="text" id="form_check" name="form_check" > <br>
+
+    <input type="button" onclick="checkGuess()" value="Check the guess">
+</form>
+
+
+<p id="result"></p>
+
+<script> 
+    let wrong = 0;
+    let correct = 0;
+function checkGuess (){
+    secret_name = document.getElementById("form_password").value
+    guess_name = document.getElementById("form_check").value
+    out = document.getElementById("result")
+    if (secret_name == guess_name ){
+        
+        alert("You got it right");
+        
+        correct = correct+ 1;
+    }
+    else {
+        
+        alert("Wrong President");
+        wrong = wrong+ 1;
+    }
+    out.innerHTML = "correct:"+correct+"wrong"+wrong;
+    
+}
+</script>
+
+        
+        
+        
+        
+      
+
+</body>
+</html> 
