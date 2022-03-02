@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html><head>
+    <title>
+        computer page
+    </title>
+</head>
+ 
+<body>
+    <h1>Mithusri Doddi orders a computer</h1>
+
+<h2>Getting input</h2>
+
+<form>
+    <input type="checkbox" id="box1" name="box" value="extra">
+    <label> Extra_memory</label><br>
+    <input type="checkbox" id="box2" name="box" value="mouse">
+    <label>Mouse</label><br>
+    <input type="checkbox" id="box3" name="box" value="cell ">
+    <label> Cell_service</label><br><br>
+    
+    <input type="button" onclick="orderComputer()" value="Order a computer">
+    </form>
+
+<p id="result">This text will be replaced </p>
+<form>
+    <label for="name">Enter a property name</label>
+    <input type="text" id="name" name="property_name" value="engraved"> <br>
+
+    <label for="value">Enter a value </label>
+    <input type="text" id="value" name="property_value"> <br>
+
+    <input type="button" onclick="updateComputer()" value="Update the computer">
+</form>
+
+<script> 
+my_computer = {}
+function orderComputer(){
+value1= document.getElementById("box1").checked
+value2= document.getElementById("box2").checked
+value3= document.getElementById("box3").checked
+out=document.getElementById("result")
+
+    my_computer={extra: value1, mouse: value2, cell: value3}
+    out.innerHTML = JSON.stringify(my_computer)
+
+
+   
+}
+function updateComputer(){
+    property_name = document.getElementById("name").value
+    property_value = document.getElementById("value").value
+    my_computer[property_name] = property_value
+    document.getElementById("result").innerHTML = JSON.stringify(my_computer)
+}
+
+</script>
+
+</body>
+</html> 
